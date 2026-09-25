@@ -1,5 +1,7 @@
 # Blue World Freediving — AIDA Depth Trophy · sito evento
 
+Sito online: https://blueworldfreediving.github.io/aida-depth-trophy/
+
 Sito statico: un solo file `index.html` + cartella `img/`.
 Tutti i contenuti che cambiano (news, atleti, programma, partner, foto, rassegna stampa)
 sono nel blocco `const DATA = { ... }` in cima a `index.html`.
