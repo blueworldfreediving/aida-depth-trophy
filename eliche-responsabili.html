@@ -106,6 +106,12 @@ footer{position:absolute;left:0;right:0;bottom:0;padding:10px 0;color:var(--mute
 .video{max-width:min(380px,100%)}
 .gal{margin-top:10px}
 @media(max-width:560px){.nav{height:48px}.brand span{display:none}.back{font-size:12px;padding:7px 12px}.support{padding:8px 0}.support a.q img{width:52px;height:52px}.dots{right:4px}.support p{font-size:13px}}
+@media(min-width:860px){#testimonianza .wrap{display:grid;grid-template-columns:1fr 280px;column-gap:44px;align-items:center}
+#testimonianza .wrap>.kicker,#testimonianza .wrap>h2{grid-column:1/-1}
+#testimonianza .wrap>.person{grid-column:1;margin-top:10px!important}
+#testimonianza .wrap>.video{grid-column:2;grid-row:3/5;margin-top:10px!important}
+#testimonianza .wrap>p:last-child{grid-column:2;grid-row:5}
+#testimonianza .person img{max-width:230px}}
 </style>
 </head>
 <body>
@@ -168,11 +174,6 @@ footer{position:absolute;left:0;right:0;bottom:0;padding:10px 0;color:var(--mute
       </div>
       <p style="margin-top:20px">La bandiera indica la presenza di un subacqueo in immersione. Quando la vedi, significa che una persona è sott'acqua, potrebbe trovarsi in risalita in qualsiasi momento, potrebbe non essere visibile dalla superficie e non può difendersi da un'imbarcazione in movimento.</p>
     </div>
-  </div>
-</div></section>
-
-<section id="perche"><div class="fit">
-  <div class="wrap two">
     <div>
       <h3>Perché 100 metri</h3>
       <p>Secondo la campagna, intorno a una boa o bandiera subacquea va mantenuta una distanza di sicurezza di almeno 100 metri, perché:</p>
@@ -208,13 +209,6 @@ footer{position:absolute;left:0;right:0;bottom:0;padding:10px 0;color:var(--mute
         <p>La sua presenza agli incontri pubblici trasforma un'esperienza dolorosa in uno strumento di prevenzione, <b>affinché nessun altro debba vivere la stessa tragedia.</b></p>
       </div>
     </div>
-  </div>
-</div></section>
-
-<section id="video"><div class="fit">
-  <div class="wrap">
-    <p class="kicker">Il video</p>
-    <h2 style="margin-bottom:14px">Mario Siriaco racconta</h2>
     <div class="video" style="margin-top:8px">
       <video controls playsinline preload="metadata" poster="img/eliche-video-poster.jpg" aria-label="Video della campagna Eliche Responsabili">
         <source src="img/eliche-responsabili.mp4" type="video/mp4">
@@ -295,7 +289,7 @@ footer{position:absolute;left:0;right:0;bottom:0;padding:10px 0;color:var(--mute
 </div></section>
 </main>
 
-<nav class="dots" aria-label="Pagine"><a href="#top" aria-label="Pagina 1"></a><a href="#persona" aria-label="Pagina 2"></a><a href="#bandiera" aria-label="Pagina 3"></a><a href="#perche" aria-label="Pagina 4"></a><a href="#testimonianza" aria-label="Pagina 5"></a><a href="#video" aria-label="Pagina 6"></a><a href="#campagna" aria-label="Pagina 7"></a><a href="#manifesti" aria-label="Pagina 8"></a><a href="#segui" aria-label="Pagina 9"></a><a href="#gara" aria-label="Pagina 10"></a></nav>
+<nav class="dots" aria-label="Pagine"><a href="#top" aria-label="Pagina 1"></a><a href="#persona" aria-label="Pagina 2"></a><a href="#bandiera" aria-label="Pagina 3"></a><a href="#testimonianza" aria-label="Pagina 4"></a><a href="#campagna" aria-label="Pagina 5"></a><a href="#manifesti" aria-label="Pagina 6"></a><a href="#segui" aria-label="Pagina 7"></a><a href="#gara" aria-label="Pagina 8"></a></nav>
 <script>
 (function(){
 var secs=[].slice.call(document.querySelectorAll('main>section'));
@@ -325,5 +319,6 @@ document.querySelectorAll('img').forEach(function(i){i.addEventListener('load',f
 fit(); dots();
 })();
 </script>
+<script data-goatcounter="https://blueworldfreediving.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
