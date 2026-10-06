@@ -52,7 +52,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.72);backdrop-fi
 .nav ul{display:none;list-style:none;gap:26px;padding:0;font-size:15px;font-weight:600}
 .nav ul a{text-decoration:none;color:var(--muted)}
 .nav ul a:hover{color:var(--fg)}
-@media(min-width:800px){.nav ul{display:flex}}
+@media(min-width:800px){.nav ul{display:flex}}.nav ul a.eliche{color:#fff;background:#d8232a;border-radius:8px;padding:7px 14px 7px 40px;font-weight:800;white-space:nowrap;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.4),0 0 16px rgba(216,35,42,.55)}.nav ul a.eliche::before{content:"";position:absolute;left:11px;top:50%;width:21px;height:15px;margin-top:-7px;background:linear-gradient(to bottom right,transparent 36%,#fff 36% 64%,transparent 64%);border-radius:2px}.nav ul a.eliche:hover{background:#ef3038;color:#fff}.mbar .eliche-m{flex:1.6;background:#d8232a;color:#fff;font-size:14px;padding:13px 6px;border:1px solid rgba(255,255,255,.4)}.nav ul a.eliche{color:#fff;background:#d8232a;border-radius:8px;padding:7px 14px 7px 40px;font-weight:800;white-space:nowrap;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.4),0 0 16px rgba(216,35,42,.55)}.nav ul a.eliche::before{content:"";position:absolute;left:11px;top:50%;width:21px;height:15px;margin-top:-7px;background:linear-gradient(to bottom right,transparent 36%,#fff 36% 64%,transparent 64%);border-radius:2px}.nav ul a.eliche:hover{background:#ef3038;color:#fff}.nav ul a.eliche{color:#fff;background:#d8232a;border-radius:8px;padding:7px 14px 7px 40px;font-weight:800;white-space:nowrap;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.4),0 0 16px rgba(216,35,42,.55)}
 
 /* hero */
 .hero{position:relative;min-height:calc(100svh - 62px);display:grid;align-items:end;border-top:0;padding:0;background:transparent}
@@ -387,7 +387,7 @@ const DATA = {
     <a class="brand" href="#top" aria-label="Blue World Freediving"><img src="img/logo-blueworld.jpg" alt="Blue World Freediving"><span>Blue World <b>Freediving</b></span></a>
     <nav aria-label="Sezioni"><ul>
       <li><a href="#news">News</a></li><li><a href="#stampa">Stampa</a></li><li><a href="#evento">Evento</a></li><li><a href="#atleti">Atleti</a></li>
-      <li><a href="#programma">Programma</a></li><li><a href="#foto">Foto</a></li><li><a href="#video">Video</a></li><li><a href="#organizzazione">Organizzazione</a></li><li><a href="#partner">Partner</a></li><li><a href="eliche-responsabili.html">Eliche Responsabili</a></li>
+      <li><a href="#programma">Programma</a></li><li><a href="#foto">Foto</a></li><li><a href="#video">Video</a></li><li><a href="#organizzazione">Organizzazione</a></li><li><a href="#partner">Partner</a></li><li><a class="eliche" href="eliche-responsabili.html">Eliche Responsabili</a></li>
     </ul></nav>
   </div>
 </header>
@@ -540,7 +540,7 @@ const DATA = {
 
 <footer><div class="wrap">Blue World Freediving · 2º AIDA Depth Trophy · Sicilia 2026 · Competizione ufficiale <a id="aida-link" href="#" target="_blank" rel="noopener">AIDA International</a></div></footer>
 
-<div class="mbar">
+<div class="mbar"><a class="btn eliche-m" href="eliche-responsabili.html">Eliche Responsabili</a>
   <a class="btn btn-ghost" href="#news" data-track="news-mbar">News</a>
   <a class="btn btn-primary" id="cta-follow-m" href="#segui" data-track="follow-mbar">Segui l'evento</a>
 </div>
