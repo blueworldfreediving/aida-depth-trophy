@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eliche Responsabili · Lega Navale Italiana — Blue World Freediving AIDA Depth Trophy</title>
+<meta name="description" content="Eliche Responsabili, la campagna della Lega Navale Italiana sulla boa segnasub: sotto quella boa c'è una persona. Meglio un metro in più che una vita in meno.">
+<meta property="og:title" content="Eliche Responsabili · Meglio un metro in più che una vita in meno">
+<meta property="og:description" content="La campagna della Lega Navale Italiana, patrocinante del 2º Blue World Freediving AIDA Depth Trophy.">
+<meta property="og:image" content="img/eliche-boa.jpg">
+<meta name="theme-color" content="#04101f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#04101f;--sea:#071a30;--deep:#0b2543;--line:#16406b;--cyan:#25d5ff;--cyan-soft:#9fe9ff;--red:#ff5a4d;--fg:#f2f7fb;--muted:#9db3c9;--font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--radius:14px;--pad:clamp(20px,5vw,40px);--max:1120px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--fg);font-family:var(--font);line-height:1.55;font-size:17px;overflow-x:hidden}
+img,video{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(48px,8vw,92px) 0;border-top:1px solid rgba(255,255,255,.08)}
+section:nth-of-type(even){background:rgba(7,26,48,.6)}
+h1,h2,h3{line-height:1.08;letter-spacing:-.02em;font-weight:800}
+h2{font-size:clamp(28px,5vw,46px);margin-bottom:16px}
+h3{font-size:22px;margin-bottom:10px}
+p{color:var(--muted)}
+p+p{margin-top:14px}
+.kicker{color:var(--cyan);font-weight:700;font-size:15px;margin-bottom:10px}
+.lead{font-size:clamp(18px,2.4vw,22px);max-width:34em}
+.lead b,p b{color:var(--fg);font-weight:600}
+header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:15px}
+.brand img{height:34px;width:auto;border-radius:6px}
+.brand b{color:var(--cyan)}
+.back{font-size:14px;font-weight:700;text-decoration:none;color:var(--cyan-soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+.back:hover{border-color:var(--cyan)}
+.hero{padding:clamp(56px,10vw,120px) 0 clamp(48px,8vw,90px);border-top:0;background:radial-gradient(120% 90% at 80% 0%,rgba(12,58,99,.9) 0%,rgba(7,26,48,.85) 50%,var(--ink) 100%)}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:880px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(37,213,255,.45);background:rgba(7,26,48,.65);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--cyan-soft)}
+.hero h1{font-size:clamp(44px,9vw,84px);margin:18px 0 14px}
+.hero h1 span{color:var(--red)}
+.hero .claim{font-size:clamp(22px,3.4vw,32px);font-weight:700;color:var(--fg);letter-spacing:-.01em;max-width:16em}
+.hero .sub{margin-top:16px;font-size:18px;max-width:30em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 22px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent}
+.btn-primary{background:var(--cyan);color:var(--ink)}
+.btn-primary:hover{background:#5fe0ff}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--cyan)}
+.poster{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.45);display:block}
+.hero .poster{max-width:420px;margin:0 auto}
+.quote{font-size:clamp(24px,4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.2;color:var(--fg);max-width:20em}
+.quote em{font-style:normal;color:var(--cyan)}
+.two{display:grid;gap:34px;align-items:start}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.flag-box{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;border:1px solid var(--line);border-radius:var(--radius);background:var(--sea);padding:20px;margin-top:22px}
+.flag-box svg{width:96px;height:auto;border-radius:4px}
+.flag-box b{display:block;font-size:30px;letter-spacing:-.03em;color:var(--fg);line-height:1}
+.flag-box span{color:var(--muted);font-size:15px}
+ul.chk{list-style:none;padding:0;display:grid;gap:10px;margin-top:6px}
+ul.chk li{display:flex;gap:12px;align-items:flex-start;color:var(--fg);font-size:17px}
+ul.chk li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--cyan);margin-top:9px;box-shadow:0 0 10px var(--cyan)}
+ul.why{color:var(--muted);padding-left:20px;display:grid;gap:6px;margin-top:8px}
+.panel{background:var(--sea);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.video{max-width:380px;margin:0 auto;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#000}
+.video video{width:100%;aspect-ratio:9/16;background:#000}
+.person{display:grid;gap:26px;align-items:center}
+@media(min-width:760px){.person{grid-template-columns:.8fr 1.2fr}}
+.person img{border-radius:var(--radius);border:1px solid var(--line);width:100%;max-width:340px}
+.person h3{font-size:clamp(26px,4vw,34px)}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+@media(min-width:860px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--sea)}
+.gal a:hover{border-color:var(--cyan)}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.gal figcaption{font-size:13px;color:var(--muted);padding:9px 12px}
+.initi{columns:1;gap:30px;margin-top:6px}
+@media(min-width:760px){.initi{columns:2}}
+.initi li{break-inside:avoid;margin-bottom:10px}
+.follow{display:grid;gap:30px;align-items:center}
+@media(min-width:760px){.follow{grid-template-columns:auto 1fr}}
+.qr{background:#fff;border-radius:18px;padding:18px;width:min(86vw,340px);margin:0 auto}
+.qr img{width:100%;height:auto;image-rendering:pixelated}
+.qr+.cap{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+.handle{font-size:clamp(22px,4vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--fg);margin:6px 0 16px;word-break:break-word}
+.event{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:linear-gradient(180deg,var(--sea),var(--deep));display:grid;gap:14px}
+.event img{height:58px;width:auto;background:#fff;padding:6px;border-radius:8px}
+.event .row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06);background:rgba(4,16,31,.9)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Blue World Freediving"><img src="img/logo-blueworld.jpg" alt="Blue World Freediving"><span>Blue World <b>Freediving</b></span></a>
+    <a class="back" href="index.html">← Torna al sito dell'evento</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Eliche Responsabili">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Campagna della Lega Navale Italiana</span>
+      <h1>Eliche <span>Responsabili</span></h1>
+      <p class="claim">Meglio un metro in più che una vita in meno.</p>
+      <p class="sub">Il mare è di tutti, ma tutti hanno il dovere di viverlo con attenzione. Una campagna per chi naviga, per chi si immerge, per chi ama il mare.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#segui">Segui la campagna</a>
+        <a class="btn btn-ghost" href="#bandiera">Cosa significa la bandiera</a>
+      </div>
+    </div>
+    <a class="poster" href="img/eliche-boa.jpg" aria-label="Manifesto: Sotto questa boa c'è una persona"><img src="img/eliche-boa.jpg" alt="Manifesto Eliche Responsabili: sotto questa boa c'è una persona" width="875" height="1242"></a>
+  </div>
+</section>
+
+<section id="persona">
+  <div class="wrap">
+    <p class="kicker">Il messaggio</p>
+    <p class="quote">La sicurezza in mare non inizia quando si accende un motore. Inizia molto prima: <em>quando si conoscono le regole.</em></p>
+    <div class="two" style="margin-top:34px">
+      <div>
+        <p>Ogni estate migliaia di persone prendono il mare a bordo di barche e gommoni. Molti lo fanno per la prima volta, altri lo vivono da anni. Eppure esiste un segnale che continua a essere ignorato o, peggio, sconosciuto: la boa con la bandiera rossa e diagonale bianca, che indica la presenza di un subacqueo in immersione.</p>
+        <p><b>Sotto quella boa non c'è un semplice galleggiante. C'è una persona.</b></p>
+      </div>
+      <div>
+        <p>Da questa consapevolezza nasce <b>Eliche Responsabili</b>, un progetto della <b>Lega Navale Italiana</b> che ha trasformato una regola nautica in un messaggio di responsabilità collettiva, in collaborazione con la <b>FIPSAS</b>.</p>
+        <p>Non una campagna contro qualcuno, ma <b>una campagna per tutti</b>: per chi naviga, per chi si immerge, per chi ama il mare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bandiera">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Come riconoscerla</p>
+      <h2>Cosa significa la bandiera rossa con striscia bianca</h2>
+      <div class="flag-box">
+        <svg viewBox="0 0 120 90" role="img" aria-label="Bandiera rossa con diagonale bianca"><rect width="120" height="90" fill="#d8232a"/><polygon points="0,0 28,0 120,70 120,90 92,90 0,20" fill="#fff"/></svg>
+        <div><b>100 m</b><span>distanza di sicurezza da mantenere intorno a una boa o bandiera subacquea</span></div>
+      </div>
+      <p style="margin-top:20px">La bandiera indica la presenza di un subacqueo in immersione. Quando la vedi, significa che una persona è sott'acqua, potrebbe trovarsi in risalita in qualsiasi momento, potrebbe non essere visibile dalla superficie e non può difendersi da un'imbarcazione in movimento.</p>
+    </div>
+    <div>
+      <h3>Perché 100 metri</h3>
+      <p>Secondo la campagna, intorno a una boa o bandiera subacquea va mantenuta una distanza di sicurezza di almeno 100 metri, perché:</p>
+      <ul class="why">
+        <li>il subacqueo può spostarsi rispetto alla verticale della boa;</li>
+        <li>la corrente può trascinare la sagola;</li>
+        <li>il sub può emergere lontano dal punto iniziale;</li>
+        <li>l'elica è pericolosa anche a bassa velocità.</li>
+      </ul>
+      <p><b>Avvicinarsi significa mettere una vita in pericolo.</b></p>
+      <h3 style="margin-top:28px">Quando navighi</h3>
+      <ul class="chk">
+        <li>Riduci la velocità</li>
+        <li>Osserva l'acqua davanti a te</li>
+        <li>Allontanati dalle boe subacquee</li>
+        <li>Informa chi è a bordo</li>
+        <li>Se non sei sicuro, stai più lontano</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <p class="kicker">La testimonianza</p>
+    <h2>Dietro ogni boa c'è una persona</h2>
+    <div class="person" style="margin-top:26px">
+      <img src="img/eliche-mario.jpg" alt="Mario Siriaco accanto al manifesto della campagna" width="480" height="640" loading="lazy">
+      <div>
+        <h3>Mario Siriaco</h3>
+        <p>Ogni progetto ha bisogno di numeri. Ma alcuni progetti hanno bisogno soprattutto di volti. Quello di Mario Siriaco è uno di questi.</p>
+        <p>Subacqueo e profondo conoscitore del mare, Mario ha vissuto in prima persona le conseguenze di un incidente provocato dal passaggio di un'imbarcazione, che ha portato all'amputazione di una gamba. La sua testimonianza è diventata uno dei momenti più significativi della campagna: per ricordare che dietro ogni regola esiste una ragione.</p>
+        <p>La sua presenza agli incontri pubblici trasforma un'esperienza dolorosa in uno strumento di prevenzione, <b>affinché nessun altro debba vivere la stessa tragedia.</b></p>
+      </div>
+    </div>
+    <div class="video" style="margin-top:38px">
+      <video controls playsinline preload="metadata" poster="img/eliche-video-poster.jpg" aria-label="Video della campagna Eliche Responsabili">
+        <source src="img/eliche-responsabili.mp4" type="video/mp4">
+        Il tuo browser non riproduce il video.
+      </video>
+    </div>
+    <p style="text-align:center;font-size:14px;margin-top:12px">Il video contiene audio: tocca play per ascoltare.</p>
+  </div>
+</section>
+
+<section id="campagna">
+  <div class="wrap">
+    <p class="kicker">La campagna</p>
+    <h2>Cultura prima di tutto</h2>
+    <p class="lead">Molte persone che frequentano abitualmente il mare non conoscono ancora il significato della boa segnasub né la distanza minima di sicurezza. Da qui nasce la necessità di continuare a informare: <b>la prevenzione inizia dalla cultura.</b></p>
+    <h3 style="margin-top:30px">Le principali iniziative</h3>
+    <ul class="chk initi">
+      <li>Partnership con la FIPSAS – Federazione Italiana Pesca Sportiva Attività Subacquee Nuoto Pinnato</li>
+      <li>NauticSud/NauticSub</li>
+      <li>Napoli Boat Show</li>
+      <li>Corner ai Saloni nautici di Brindisi, Venezia e Genova</li>
+      <li>Evento di presentazione nell'ambito della Barcolana</li>
+      <li>Incontri con diportisti, noleggiatori e operatori del settore</li>
+      <li>Interviste sul campo sul livello di conoscenza delle regole di sicurezza</li>
+      <li>Campagne informative sui social</li>
+      <li>Materiali educativi, QR Code, adesivi e guide dedicate</li>
+    </ul>
+    <p style="margin-top:34px;font-size:15px">I manifesti riportano i patrocini della campagna Eliche Responsabili.</p>
+    <div class="gal">
+      <a href="img/eliche-boa.jpg"><img src="img/eliche-boa.jpg" alt="Manifesto: sotto questa boa c'è una persona" loading="lazy"><figcaption>Sotto questa boa c'è una persona</figcaption></a>
+      <a href="img/eliche-metro.jpg"><img src="img/eliche-metro.jpg" alt="Manifesto: meglio un metro in più che una vita in meno" loading="lazy"><figcaption>Meglio un metro in più</figcaption></a>
+      <a href="img/eliche-100m.jpg"><img src="img/eliche-100m.jpg" alt="Manifesto: 100 metri possono salvare una vita" loading="lazy"><figcaption>100 metri possono salvare una vita</figcaption></a>
+      <a href="img/eliche-qr.jpg"><img src="img/eliche-qr.jpg" alt="Manifesto: stai a 100 metri di distanza da questa bandiera" loading="lazy"><figcaption>Stai a 100 metri da questa bandiera</figcaption></a>
+    </div>
+  </div>
+</section>
+
+<section id="segui">
+  <div class="wrap follow">
+    <div>
+      <div class="qr"><img src="img/eliche-qr-instagram.png" alt="QR code del profilo Instagram Eliche Responsabili" width="1000" height="1000" loading="lazy"></div>
+      <p class="cap">Inquadra il QR con la fotocamera</p>
+    </div>
+    <div>
+      <p class="kicker">Segui e supporta la campagna</p>
+      <h2>Porta con te la regola dei 100 metri</h2>
+      <p class="handle">@elicheresponsabiliofficial</p>
+      <p>Seguire la campagna è il modo più semplice per diffondere il messaggio: condividi, parlane a bordo, spiegalo a chi noleggia un gommone per la prima volta.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.instagram.com/elicheresponsabiliofficial/" target="_blank" rel="noopener">Apri su Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gara">
+  <div class="wrap">
+    <div class="event">
+      <p class="kicker" style="margin:0">Patrocinio</p>
+      <div class="row">
+        <img src="img/logo-lega-navale.jpg" alt="Lega Navale Italiana">
+        <div>
+          <h3 style="margin:0">La Lega Navale Italiana patrocina il 2º Blue World Freediving AIDA Depth Trophy</h3>
+          <p style="margin-top:6px">14–17 ottobre 2026 · Acireale · Acitrezza</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top:4px"><a class="btn btn-ghost" href="index.html">Scopri la gara</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Blue World Freediving · 2º AIDA Depth Trophy · Sicilia 2026 · Eliche Responsabili è un progetto della Lega Navale Italiana in collaborazione con FIPSAS.</div></footer>
+</body>
+</html>
