@@ -15,13 +15,14 @@
 <style>
 :root{--ink:#04101f;--sea:#071a30;--deep:#0b2543;--line:#16406b;--cyan:#25d5ff;--cyan-soft:#9fe9ff;--red:#ff5a4d;--fg:#f2f7fb;--muted:#9db3c9;--font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--radius:14px;--pad:clamp(20px,5vw,40px);--max:1120px}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--ink);color:var(--fg);font-family:var(--font);line-height:1.55;font-size:17px;overflow-x:hidden}
 img,video{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-section{padding:clamp(48px,8vw,92px) 0;border-top:1px solid rgba(255,255,255,.08)}
+section{height:100vh;height:100dvh;padding:var(--bars,130px) 0 0;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
+section>.fit{width:100%;transform-origin:center center;padding:14px 0}
 section:nth-of-type(even){background:rgba(7,26,48,.6)}
 h1,h2,h3{line-height:1.08;letter-spacing:-.02em;font-weight:800}
 h2{font-size:clamp(28px,5vw,46px);margin-bottom:16px}
@@ -31,21 +32,21 @@ p+p{margin-top:14px}
 .kicker{color:var(--cyan);font-weight:700;font-size:15px;margin-bottom:10px}
 .lead{font-size:clamp(18px,2.4vw,22px);max-width:34em}
 .lead b,p b{color:var(--fg);font-weight:600}
-header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+header{position:fixed;left:0;right:0;top:0;z-index:20;background:rgba(4,16,31,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:15px}
 .brand img{height:34px;width:auto;border-radius:6px}
 .brand b{color:var(--cyan)}
 .back{font-size:14px;font-weight:700;text-decoration:none;color:var(--cyan-soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
 .back:hover{border-color:var(--cyan)}
-.support{background:rgba(7,26,48,.92);border-bottom:1px solid var(--line);padding:14px 0}
+.support{position:fixed;left:0;right:0;top:62px;z-index:19;background:rgba(7,26,48,.96);border-bottom:1px solid var(--line);padding:14px 0}
 .support .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .support p{font-size:clamp(14px,2.2vw,17px);font-weight:700;color:var(--fg);margin:0;line-height:1.35}
 .support p b{color:var(--cyan-soft)}
 .support a.q{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;text-decoration:none;flex:none}
 .support a.q img{width:64px;height:64px;background:#fff;padding:4px;border-radius:8px}
 @media(max-width:560px){.support a.q span{display:none}}
-.hero{padding:clamp(56px,10vw,120px) 0 clamp(48px,8vw,90px);border-top:0;background:radial-gradient(120% 90% at 80% 0%,rgba(12,58,99,.9) 0%,rgba(7,26,48,.85) 50%,var(--ink) 100%)}
+.hero{border-top:0;background:radial-gradient(120% 90% at 80% 0%,rgba(12,58,99,.9) 0%,rgba(7,26,48,.85) 50%,var(--ink) 100%)}
 .hero-grid{display:grid;gap:34px;align-items:center}
 @media(min-width:880px){.hero-grid{grid-template-columns:1.15fr .85fr}}
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(37,213,255,.45);background:rgba(7,26,48,.65);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--cyan-soft)}
@@ -98,7 +99,13 @@ ul.why{color:var(--muted);padding-left:20px;display:grid;gap:6px;margin-top:8px}
 .event{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:linear-gradient(180deg,var(--sea),var(--deep));display:grid;gap:14px}
 .event img{height:58px;width:auto;background:#fff;padding:6px;border-radius:8px}
 .event .row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
-footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06);background:rgba(4,16,31,.9)}
+footer{position:absolute;left:0;right:0;bottom:0;padding:10px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06);background:rgba(4,16,31,.9)}
+.dots{position:fixed;right:10px;top:50%;transform:translateY(-50%);z-index:18;display:grid;gap:10px}
+.dots a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);display:block;border:1px solid rgba(255,255,255,.4)}
+.dots a.on{background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.video{max-width:min(380px,100%)}
+.gal{margin-top:10px}
+@media(max-width:560px){.nav{height:48px}.brand span{display:none}.back{font-size:12px;padding:7px 12px}.support{padding:8px 0}.support a.q img{width:52px;height:52px}.dots{right:4px}.support p{font-size:13px}}
 </style>
 </head>
 <body>
@@ -117,7 +124,7 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
 </div>
 
 <main>
-<section class="hero" aria-label="Eliche Responsabili">
+<section class="hero" aria-label="Eliche Responsabili"><div class="fit">
   <div class="wrap hero-grid">
     <div>
       <span class="badge">Campagna della Lega Navale Italiana</span>
@@ -131,9 +138,9 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
     </div>
     <a class="poster" href="img/eliche-boa.jpg" aria-label="Manifesto: Sotto questa boa c'è una persona"><img src="img/eliche-boa.jpg" alt="Manifesto Eliche Responsabili: sotto questa boa c'è una persona" width="875" height="1242"></a>
   </div>
-</section>
+</div></section>
 
-<section id="persona">
+<section id="persona"><div class="fit">
   <div class="wrap">
     <p class="kicker">Il messaggio</p>
     <p class="quote">La sicurezza in mare non inizia quando si accende un motore. Inizia molto prima: <em>quando si conoscono le regole.</em></p>
@@ -148,9 +155,9 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="bandiera">
+<section id="bandiera"><div class="fit">
   <div class="wrap two">
     <div>
       <p class="kicker">Come riconoscerla</p>
@@ -161,6 +168,11 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       </div>
       <p style="margin-top:20px">La bandiera indica la presenza di un subacqueo in immersione. Quando la vedi, significa che una persona è sott'acqua, potrebbe trovarsi in risalita in qualsiasi momento, potrebbe non essere visibile dalla superficie e non può difendersi da un'imbarcazione in movimento.</p>
     </div>
+  </div>
+</div></section>
+
+<section id="perche"><div class="fit">
+  <div class="wrap two">
     <div>
       <h3>Perché 100 metri</h3>
       <p>Secondo la campagna, intorno a una boa o bandiera subacquea va mantenuta una distanza di sicurezza di almeno 100 metri, perché:</p>
@@ -181,14 +193,14 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       </ul>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="video">
+<section id="testimonianza"><div class="fit">
   <div class="wrap">
     <p class="kicker">La testimonianza</p>
     <h2>Dietro ogni boa c'è una persona</h2>
     <div class="person" style="margin-top:26px">
-      <img src="img/eliche-mario.jpg" alt="Mario Siriaco accanto al manifesto della campagna" width="480" height="640" loading="lazy">
+      <img src="img/eliche-mario.jpg" alt="Mario Siriaco accanto al manifesto della campagna" width="480" height="640">
       <div>
         <h3>Mario Siriaco</h3>
         <p>Ogni progetto ha bisogno di numeri. Ma alcuni progetti hanno bisogno soprattutto di volti. Quello di Mario Siriaco è uno di questi.</p>
@@ -196,7 +208,14 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
         <p>La sua presenza agli incontri pubblici trasforma un'esperienza dolorosa in uno strumento di prevenzione, <b>affinché nessun altro debba vivere la stessa tragedia.</b></p>
       </div>
     </div>
-    <div class="video" style="margin-top:38px">
+  </div>
+</div></section>
+
+<section id="video"><div class="fit">
+  <div class="wrap">
+    <p class="kicker">Il video</p>
+    <h2 style="margin-bottom:14px">Mario Siriaco racconta</h2>
+    <div class="video" style="margin-top:8px">
       <video controls playsinline preload="metadata" poster="img/eliche-video-poster.jpg" aria-label="Video della campagna Eliche Responsabili">
         <source src="img/eliche-responsabili.mp4" type="video/mp4">
         Il tuo browser non riproduce il video.
@@ -204,9 +223,9 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
     </div>
     <p style="text-align:center;font-size:14px;margin-top:12px">Il video contiene audio: tocca play per ascoltare.</p>
   </div>
-</section>
+</div></section>
 
-<section id="campagna">
+<section id="campagna"><div class="fit">
   <div class="wrap">
     <p class="kicker">La campagna</p>
     <h2>Cultura prima di tutto</h2>
@@ -223,20 +242,27 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       <li>Campagne informative sui social</li>
       <li>Materiali educativi, QR Code, adesivi e guide dedicate</li>
     </ul>
-    <p style="margin-top:34px;font-size:15px">I manifesti riportano i patrocini della campagna Eliche Responsabili.</p>
+  </div>
+</div></section>
+
+<section id="manifesti"><div class="fit">
+  <div class="wrap">
+    <p class="kicker">I manifesti</p>
+    <h2 style="margin-bottom:10px">Quattro manifesti, un solo messaggio</h2>
+    <p style="font-size:15px">I manifesti riportano i patrocini della campagna Eliche Responsabili.</p>
     <div class="gal">
-      <a href="img/eliche-boa.jpg"><img src="img/eliche-boa.jpg" alt="Manifesto: sotto questa boa c'è una persona" loading="lazy"><figcaption>Sotto questa boa c'è una persona</figcaption></a>
-      <a href="img/eliche-metro.jpg"><img src="img/eliche-metro.jpg" alt="Manifesto: meglio un metro in più che una vita in meno" loading="lazy"><figcaption>Meglio un metro in più</figcaption></a>
-      <a href="img/eliche-100m.jpg"><img src="img/eliche-100m.jpg" alt="Manifesto: 100 metri possono salvare una vita" loading="lazy"><figcaption>100 metri possono salvare una vita</figcaption></a>
-      <a href="img/eliche-qr.jpg"><img src="img/eliche-qr.jpg" alt="Manifesto: stai a 100 metri di distanza da questa bandiera" loading="lazy"><figcaption>Stai a 100 metri da questa bandiera</figcaption></a>
+      <a href="img/eliche-boa.jpg"><img src="img/eliche-boa.jpg" alt="Manifesto: sotto questa boa c'è una persona"><figcaption>Sotto questa boa c'è una persona</figcaption></a>
+      <a href="img/eliche-metro.jpg"><img src="img/eliche-metro.jpg" alt="Manifesto: meglio un metro in più che una vita in meno"><figcaption>Meglio un metro in più</figcaption></a>
+      <a href="img/eliche-100m.jpg"><img src="img/eliche-100m.jpg" alt="Manifesto: 100 metri possono salvare una vita"><figcaption>100 metri possono salvare una vita</figcaption></a>
+      <a href="img/eliche-qr.jpg"><img src="img/eliche-qr.jpg" alt="Manifesto: stai a 100 metri di distanza da questa bandiera"><figcaption>Stai a 100 metri da questa bandiera</figcaption></a>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="segui">
+<section id="segui"><div class="fit">
   <div class="wrap follow">
     <div>
-      <div class="qr"><img src="img/eliche-qr-instagram.png" alt="QR code del profilo Instagram Eliche Responsabili" width="1000" height="1000" loading="lazy"></div>
+      <div class="qr"><img src="img/eliche-qr-instagram.png" alt="QR code del profilo Instagram Eliche Responsabili" width="1000" height="1000"></div>
       <p class="cap">Inquadra il QR con la fotocamera</p>
     </div>
     <div>
@@ -249,9 +275,9 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="gara">
+<section id="gara"><div class="fit">
   <div class="wrap">
     <div class="event">
       <p class="kicker" style="margin:0">Patrocinio</p>
@@ -265,9 +291,39 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
       <div class="cta-row" style="margin-top:4px"><a class="btn btn-ghost" href="index.html">Scopri la gara</a></div>
     </div>
   </div>
-</section>
+<footer><div class="wrap">Blue World Freediving · 2º AIDA Depth Trophy · Sicilia 2026 · Eliche Responsabili è un progetto della Lega Navale Italiana in collaborazione con FIPSAS.</div></footer>
+</div></section>
 </main>
 
-<footer><div class="wrap">Blue World Freediving · 2º AIDA Depth Trophy · Sicilia 2026 · Eliche Responsabili è un progetto della Lega Navale Italiana in collaborazione con FIPSAS.</div></footer>
+<nav class="dots" aria-label="Pagine"><a href="#top" aria-label="Pagina 1"></a><a href="#persona" aria-label="Pagina 2"></a><a href="#bandiera" aria-label="Pagina 3"></a><a href="#perche" aria-label="Pagina 4"></a><a href="#testimonianza" aria-label="Pagina 5"></a><a href="#video" aria-label="Pagina 6"></a><a href="#campagna" aria-label="Pagina 7"></a><a href="#manifesti" aria-label="Pagina 8"></a><a href="#segui" aria-label="Pagina 9"></a><a href="#gara" aria-label="Pagina 10"></a></nav>
+<script>
+(function(){
+var secs=[].slice.call(document.querySelectorAll('main>section'));
+function fit(){
+  var h=document.querySelector('header').offsetHeight, sp=document.querySelector('.support');
+  sp.style.top=h+'px';
+  var bars=h+sp.offsetHeight;
+  document.documentElement.style.setProperty('--bars',bars+'px');
+  var avail=window.innerHeight-bars-8;
+  secs.forEach(function(sec){
+    var f=sec.firstElementChild; f.style.transform='none';
+    var foot=sec.querySelector('footer'), reserve=foot?foot.offsetHeight:0;
+    var a=avail-reserve, ch=f.scrollHeight;
+    var sc=Math.min(1,a/ch);
+    f.style.transform=sc<1?'scale('+sc+')':'none';
+    f.style.marginBottom=reserve+'px';
+  });
+}
+function dots(){
+  var ds=[].slice.call(document.querySelectorAll('.dots a')), y=window.scrollY+window.innerHeight/2, cur=0;
+  secs.forEach(function(s,i){ if(s.offsetTop<=y) cur=i; });
+  ds.forEach(function(d,i){ d.classList.toggle('on',i===cur); });
+}
+window.addEventListener('resize',fit); window.addEventListener('load',fit);
+window.addEventListener('scroll',dots,{passive:true});
+document.querySelectorAll('img').forEach(function(i){i.addEventListener('load',fit)});
+fit(); dots();
+})();
+</script>
 </body>
 </html>
