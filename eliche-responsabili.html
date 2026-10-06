@@ -38,6 +38,13 @@ header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.8);backdrop-fil
 .brand b{color:var(--cyan)}
 .back{font-size:14px;font-weight:700;text-decoration:none;color:var(--cyan-soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px}
 .back:hover{border-color:var(--cyan)}
+.support{background:rgba(7,26,48,.92);border-bottom:1px solid var(--line);padding:14px 0}
+.support .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.support p{font-size:clamp(14px,2.2vw,17px);font-weight:700;color:var(--fg);margin:0;line-height:1.35}
+.support p b{color:var(--cyan-soft)}
+.support a.q{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;text-decoration:none;flex:none}
+.support a.q img{width:64px;height:64px;background:#fff;padding:4px;border-radius:8px}
+@media(max-width:560px){.support a.q span{display:none}}
 .hero{padding:clamp(56px,10vw,120px) 0 clamp(48px,8vw,90px);border-top:0;background:radial-gradient(120% 90% at 80% 0%,rgba(12,58,99,.9) 0%,rgba(7,26,48,.85) 50%,var(--ink) 100%)}
 .hero-grid{display:grid;gap:34px;align-items:center}
 @media(min-width:880px){.hero-grid{grid-template-columns:1.15fr .85fr}}
@@ -101,6 +108,13 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:13px;border-top:1px soli
     <a class="back" href="index.html">← Torna al sito dell'evento</a>
   </div>
 </header>
+
+<div class="support">
+  <div class="wrap">
+    <p><b>Blue World Freediving</b> e <b>Depth Trophy</b> supportano <b>Eliche Responsabili</b>, la campagna della Lega Navale Italiana per la sicurezza in mare.</p>
+    <a class="q" href="https://www.instagram.com/elicheresponsabiliofficial/" aria-label="Segui Eliche Responsabili su Instagram"><span>Segui la campagna<br>su Instagram</span><img src="img/eliche-qr-instagram.png" alt="QR code Instagram Eliche Responsabili"></a>
+  </div>
+</div>
 
 <main>
 <section class="hero" aria-label="Eliche Responsabili">
