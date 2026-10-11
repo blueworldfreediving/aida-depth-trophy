@@ -95,7 +95,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.72);backdrop-fi
 .card h3{font-size:24px}
 .card .meta{color:var(--muted);font-size:15px;margin:6px 0 12px;display:flex;align-items:center;gap:8px}
 .card .flag svg{display:block;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
-.card .role{font-size:15px;color:var(--fg)}
+.card .role{font-size:15px;color:var(--fg)}.hl{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px;font-size:14px;line-height:1.4;color:var(--fg)}.hl li{padding-left:16px;position:relative}.hl li:before{content:"";position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--cyan)}
 .wr{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline}
 .wr .d{font-size:40px;font-weight:800;letter-spacing:-.04em;color:var(--cyan);line-height:1;grid-row:span 3}
 .wr .l{font-size:12px;font-weight:700;color:var(--cyan-soft)}
@@ -216,7 +216,7 @@ const DATA = {
     { name: "Zsófia Törőcsik", country: "Ungheria", flag: "hu", role: "Atleta di vertice con profilo internazionale", photo: "img/zsofia-torocsik.jpg", instagram: "https://www.instagram.com/torocsikzsofia/",
       record: { depth: 108, discipline: "Free Immersion (FIM)", date: "5 ottobre 2026", place: "Limassol, Cipro · Depth Championships" } },
     { name: "Sanda Delija", country: "Croazia", flag: "hr", role: "Prima donna croata oltre i 100 metri", photo: "img/sanda-delija.jpg", instagram: "https://www.instagram.com/sandadelija/",
-      record: { depth: 103, discipline: "Free Immersion (FIM)", date: "4 maggio 2025", place: "Mabini, Batangas, Filippine", former: true } },
+      record: { depth: 103, discipline: "Free Immersion (FIM)", date: "4 maggio 2025", place: "Mabini, Batangas, Filippine", former: true } },     { name: "Vitomir Maričić", country: "Croazia", flag: "hr", role: "Campione mondiale e primatista Guinness", photo: "img/vitomir-maricic.jpg", highlights: ["2025 · Guinness World Record di apnea volontaria: 29 min 3 s", "2025 · Miglior apneista della classifica mondiale complessiva AIDA International", "2026 · Record nazionale croato di apnea statica: 10 min 30 s, terzo al mondo nella specialità", "Settembre 2026 · Primo atleta croato nella International Sports Hall of Fame"] },
   ],
   program: [
     { day: "Mer 14 ott", items: ["Sessione in acqua — orari in definizione"] },
@@ -581,8 +581,8 @@ const DATA = {
     const init=a.name.split(' ').map(w=>w[0]).join('');
     const ph=a.photo?`<img loading="lazy" src="${esc(a.photo)}" alt="${esc(a.name)}">`:`<div class="init" aria-hidden="true">${esc(init)}</div>`;
     const wr=a.record?`<div class="wr"><span class="d">${a.record.depth}<span style="font-size:.45em"> m</span></span><span class="l">${a.record.former?"World Record 2025":"World Record"}</span><span class="t">${esc(a.record.discipline)}</span><span class="s">${esc(a.record.date)} · ${esc(a.record.place)}</span></div>`:'';
-    const ig=a.instagram?`<a class="ig" href="${esc(a.instagram)}" target="_blank" rel="noopener" data-track="ig-athlete">${IG}<span>${esc(handle(a.instagram))}</span></a>`:'';
-    return `<article class="card"><div class="ph">${ph}</div><div class="body"><h3>${esc(a.name)}</h3><p class="meta"><span class="flag">${FLAGS[a.flag]||""}</span>${esc(a.country)}</p><p class="role">${esc(a.role)}</p>${ig}${wr}</div></article>`;
+    const hl=a.highlights?`<ul class="hl">${a.highlights.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';const ig=a.instagram?`<a class="ig" href="${esc(a.instagram)}" target="_blank" rel="noopener" data-track="ig-athlete">${IG}<span>${esc(handle(a.instagram))}</span></a>`:'';
+    return `<article class="card"><div class="ph">${ph}</div><div class="body"><h3>${esc(a.name)}</h3><p class="meta"><span class="flag">${FLAGS[a.flag]||""}</span>${esc(a.country)}</p><p class="role">${esc(a.role)}</p>${ig}${hl}${wr}</div></article>`;
   }).join('');
 
   // program
