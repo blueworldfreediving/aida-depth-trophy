@@ -154,7 +154,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(4,16,31,.72);backdrop-fi
 .panel h3{font-size:22px;margin-bottom:12px}
 .panel .wait{color:var(--muted);font-size:15px}
 .day{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
-.day b{color:var(--cyan-soft)}
+.day b{color:var(--cyan-soft)}.stw{grid-column:2;overflow-x:auto;margin-top:4px}.st{border-collapse:collapse;width:100%;font-size:14px}.st th{text-align:left;color:var(--cyan-soft);font-weight:700;padding:6px 14px 6px 0;border-bottom:1px solid var(--line);white-space:nowrap}.st td{padding:8px 14px 8px 0;border-bottom:1px solid rgba(255,255,255,.08);color:var(--fg);white-space:nowrap}.st td:first-child,.st td:nth-child(2){color:var(--cyan-soft);font-weight:700}
 .day ul{padding-left:18px;color:var(--muted)}
 .newsi{padding:12px 0;border-top:1px solid var(--line)}
 .newsi small{color:var(--cyan-soft);font-weight:700;font-size:12px}
@@ -220,7 +220,7 @@ const DATA = {
   ],
   program: [
     { day: "Mer 14 ott", items: ["Official training"] },
-    { day: "Gio 15 ott", items: ["Starting list (OT · diver · paese · disciplina · AP)", "Heat 1 · 10:30 · Guido Santagati · ITA · FIM · 28 m", "Heat 2 · 10:40 · Mario Turco · ITA · FIM · 33 m", "Heat 3 · 10:50 · Tommaso Brugiapaglia · ITA · FIM · 40 m", "Heat 4 · 11:00 · Petar Klovar · CRO · CWTB · 100 m", "Heat 5 · 11:15 · Zsófia Törőcsik · HUN · CWT · 100 m", "Heat 6 · 11:30 · Sanda Delija · CRO · CWTB · 101 m", "Heat 7 · 11:45 · Mario Mohorovičić · CRO · FIM · 25 m"] },
+    { day: "Gio 15 ott", items: ["Starting list"], table: { head: ["Heat","OT","Diver","Paese","Disciplina","AP"], rows: [["1","10:30","Guido Santagati","ITA","FIM","28 m"],["2","10:40","Mario Turco","ITA","FIM","33 m"],["3","10:50","Tommaso Brugiapaglia","ITA","FIM","40 m"],["4","11:00","Petar Klovar","CRO","CWTB","100 m"],["5","11:15","Zsófia Törőcsik","HUN","CWT","100 m"],["6","11:30","Sanda Delija","CRO","CWTB","101 m"],["7","11:45","Mario Mohorovičić","CRO","FIM","25 m"]] } },
     { day: "Ven 16 ott", items: ["Sessione in acqua — orari in definizione"] },
     { day: "Sab 17 ott", items: ["Sessione in acqua — orari in definizione", "Premiazione — da confermare"] },
   ],
@@ -586,7 +586,7 @@ const DATA = {
   }).join('');
 
   // program
-  $('#program').innerHTML=D.program.length?`<p class="wait" style="margin-bottom:6px">Programma in aggiornamento: orari e punti di osservazione verranno pubblicati appena definiti.</p>`+D.program.map(d=>`<div class="day"><b>${esc(d.day)}</b><ul>${d.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')
+  $('#program').innerHTML=D.program.length?`<p class="wait" style="margin-bottom:6px">Programma in aggiornamento: orari e punti di osservazione verranno pubblicati appena definiti.</p>`+D.program.map(d=>`<div class="day"><b>${esc(d.day)}</b><ul>${d.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${d.table?`<div class="stw"><table class="st"><thead><tr>${d.table.head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${d.table.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:''}</div>`).join('')
     :`<p class="wait">Programma dettagliato in aggiornamento.</p>`;
 
   // live + social
