@@ -222,7 +222,7 @@ const DATA = {
     { day: "Mer 14 ott", items: ["Official training"] },
     { day: "Gio 15 ott", items: ["Starting list e risultati"], table: { head: ["Heat","OT","Diver","Paese","Disciplina","AP","Risultato","Punti","Card"], rows: [["1","10:30","Guido Santagati","ITA","FIM","28 m","28 m","28","@white"],["2","10:40","Mario Turco","ITA","FIM","33 m","25 m","16","@yellow"],["3","10:50","Tommaso Brugiapaglia","ITA","FIM","40 m","40 m","40","@white"],["4","11:00","Petar Klovar","CRO","CWTB","100 m","100 m","100","@white"],["5","11:15","Zsófia Törőcsik","HUN","CWT","100 m","100 m","100","@white"],["6","11:30","Sanda Delija","CRO","CWTB","101 m","66 m","0","@red"],["7","11:45","Mario Mohorovičić","CRO","FIM","25 m","DNS","0",""]] } },
     { day: "Ven 16 ott", items: ["Competition day e risultati"], table: { head: ["Heat","Tempo","Diver","Paese","Disciplina","AP","Risultato","Punti","Card"], rows: [["1","03:45","Sanda Delija","CRO","CWTB","101 m","93 m","0","@red"],["2","01:50","Tommaso Brugiapaglia","ITA","FIM","50 m","50 m","50","@white"],["3","01:15","Mario Turco","ITA","FIM","27 m","27 m","27","@white"],["4","01:00","Mario Mohorovičić","CRO","FIM","25 m","25 m","25","@white"],["5","01:00","Guido Santagati","ITA","CNF","20 m","20 m","20","@white"]] } },
-    { day: "Sab 17 ott", table: { head: ["Nr","OT","Diver","Paese","Disciplina","AP","Risultato","Punti","Card"], rows: [["1","11:20","Tommaso Brugiapaglia","ITA","FIM","55 m","50 m","44","@yellow"],["2","10:30","Mario Turco","ITA","FIM","27 m","27 m","0","@red"],["3","11:00","Gianluca Vetri","ITA","CWTB","35 m","35 m","35","@white"],["4","10:40","Guido Santagati","ITA","CWTB","30 m","24 m","17","@yellow"],["5","11:50","Petar Klovar","CRO","CWTB","100 m","72 m","43","@yellow"],["6","10:50","Adriana Zega","ITA","CWTB","35 m","35 m","35","@white"],["7","11:35","Zsófia Törőcsik","HUN","CWT","100 m","100 m","100","@white"],["8","11:10","Federica Giliberto","ITA","CWT","40 m","29 m","17","@yellow"],["9","12:05","Sanda Delija","CRO","CWT","101 m","DNS","0",""]] }, items: ["Competition day e risultati", "Condizioni del mare avverse: Zsófia Törőcsik ha chiuso a 100 m", "Premiazione · Castello Normanno, Aci Castello"] },
+    { day: "Sab 17 ott", table: { head: ["Nr","OT","Diver","Paese","Disciplina","AP","Risultato","Punti","Card"], rows: [["1","11:20","Tommaso Brugiapaglia","ITA","FIM","55 m","50 m","44","@yellow"],["2","10:30","Mario Turco","ITA","FIM","27 m","27 m","0","@red"],["3","11:00","Gianluca Vetri","ITA","CWTB","35 m","35 m","35","@white"],["4","10:40","Guido Santagati","ITA","CWTB","30 m","24 m","17","@yellow"],["5","11:50","Petar Klovar","CRO","CWTB","100 m","72 m","43","@yellow"],["6","10:50","Adriana Zega","ITA","CWTB","35 m","35 m","35","@white"],["7","11:35","Zsófia Törőcsik","HUN","CWT","100 m","100 m","100","@white"],["8","11:10","Federica Giliberto","ITA","CWT","40 m","29 m","17","@yellow"],["9","12:05","Sanda Delija","CRO","CWT","101 m","DNS","0",""]] }, items: ["Competition day e risultati", "Condizioni del mare avverse: Zsófia Törőcsik ha chiuso a 100 m", "Premiazione ore 16:00 · Castello Normanno, Aci Castello"] },{ day: "Classifica finale", items: ["Overall uomini · 1º Petar Klovar (CRO) 143 punti · 2º Tommaso Brugiapaglia (ITA) 134 punti · 3º Guido Santagati (ITA) 65 punti", "Overall donne · 1ª Zsófia Törőcsik (HUN) 200 punti · 2ª Adriana Zega (ITA) 35 punti · 3ª Federica Giliberto (ITA) 17 punti"] },
   ],
   press: [
     { outlet: "Punto Notizia", date: "17 settembre 2026", title: "Apnea, ad Acireale la seconda edizione «Blue World Freediving AIDA Depth Trophy»", url: "https://puntonotizia.com/apnea-ad-acireale-la-seconda-edizione-blue-world-freediving-aida-depth-trophy", kind: "Articolo" },
@@ -402,7 +402,7 @@ const DATA = {
     <div class="count" id="count" aria-label="Giorni all'evento"></div>
     <p class="claim" id="h-claim"></p>
     <div class="cta-row">
-      <a class="btn btn-primary" id="cta-follow" href="#segui" data-track="follow-hero">Segui l'evento</a>
+      
       <a class="btn btn-ghost" href="#programma" data-track="program-hero">Programma</a>
     </div>
   </div>
@@ -542,7 +542,7 @@ const DATA = {
 
 <div class="mbar"><a class="btn eliche-m" href="eliche-responsabili.html">Eliche Responsabili</a>
   <a class="btn btn-ghost" href="#news" data-track="news-mbar">News</a>
-  <a class="btn btn-primary" id="cta-follow-m" href="#segui" data-track="follow-mbar">Segui l'evento</a>
+  
 </div>
 
 <script>
@@ -569,7 +569,7 @@ const DATA = {
   cd();setInterval(cd,60000);
 
   // follow CTA → instagram if set
-  if(D.links.instagram){['#cta-follow','#cta-follow-m'].forEach(s=>{const a=$(s);a.href=D.links.instagram;a.target='_blank';a.rel='noopener';});}
+  if(D.links.instagram){['#cta-follow','#cta-follow-m'].forEach(s=>{const a=$(s);if(!a)return;a.href=D.links.instagram;a.target='_blank';a.rel='noopener';});}
 
   // news
   const news=D.news.filter(n=>n.published!==false);
